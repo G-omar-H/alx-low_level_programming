@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _isalpha - check if c is an alphabet
+ * @c: takes input from another function.
  * Return: return 1 if tue est return 0
 */
 int _isalpha(int c)
