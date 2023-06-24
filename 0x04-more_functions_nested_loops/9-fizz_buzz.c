@@ -21,7 +21,12 @@ int main(void)
 		else if ((d % 3) == 0 && (d % 5) != 0)
 			printf("Fizz ");
 		else if ((d % 5) == 0 && (d % 3) != 0)
-			printf("Buzz ");
+		{
+			if (d == 100)
+				printf("Buzz");
+			else
+				printf("Buzz ");
+		}
 		else if ((d % 3) == 0 && (d % 5) == 0)
 			printf("FizzBuzz ");
 	}
