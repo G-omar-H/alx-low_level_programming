@@ -6,28 +6,14 @@
  */
 void print_number(int n)
 {
-	int c = abs(n);
+	unsigned int num = n;
 
 	if (n < 0)
+	{
 		_putchar('-');
-	if (c >= 0 && c <= 9)
-		_putchar(c + 48);
-	else if (c >= 10 && c <= 99)
-	{
-		_putchar((c / 10) + 48);
-		_putchar((c % 10) + 48);
+		num = -num;
 	}
-	else if (c >= 100 && c <= 999)
-	{
-		_putchar((c / 100) + 48);
-		_putchar(((c / 10) % 10) + 48);
-		_putchar((c % 10) + 48);
-	}
-	else if (c >= 1000 && c <= 9999)
-	{
-		_putchar((c / 1000) + 48);
-		_putchar(((c / 100) % 10) + 48);
-		_putchar(((c % 100) / 10) + 48);
-		_putchar((c % 10) + 48);
-		}
+	if ((num / 10) > 0)
+		print_number(num / 10);
+	_putchar((num % 10) + 48);
 }
