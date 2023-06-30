@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * string_toupper - make a string uppercase
- * Return: i
+ * @str: sring
+ * Return: str
  */
 char *string_toupper(char *str)
 {
