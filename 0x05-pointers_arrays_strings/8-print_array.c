@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print-array - print n element of an erray of integers
+ * print_array - print n element of an erray of integers
  * @a: array
  * @n: takes inpute from another function
  * Return: 0
