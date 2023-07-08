@@ -10,7 +10,7 @@ int main(int argc, char  *argv[])
 {
 	long int  i, n, m;
 
-	if (argv[1] == argv[argc])
+	if (argv[1] == argv[argc] || argv[2] == argv[argc])
 	{
 		printf("Error\n");
 		return (1);
