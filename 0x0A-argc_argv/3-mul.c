@@ -8,7 +8,7 @@
  */
 int main(int argc, char  *argv[])
 {
-	int i, n;
+	long int  i, n, m;
 
 	if (argv[1] == argv[argc])
 	{
@@ -18,6 +18,7 @@ int main(int argc, char  *argv[])
 
 	i = atoi(argv[1]);
 	n = atoi(argv[2]);
-	printf("%d\n", i * n);
+	m = i * n;
+	printf("%li\n", m);
 	return (0);
 }
