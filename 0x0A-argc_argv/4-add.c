@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, count;
+	long int i, count;
 
 	count = 0;
 	if (argv[1] == argv[argc])
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		count += atoi(argv[i]);
 		if (i == argc - 1)
 		{
-			printf("%d\n", count);
+			printf("%li\n", count);
 		}
 
 	}
