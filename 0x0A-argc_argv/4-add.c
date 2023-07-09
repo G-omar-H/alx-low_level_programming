@@ -8,17 +8,20 @@
  */
 int main(int argc, char *argv[])
 {
-	long int i, count;
+	long int i, j, count;
 
 	count = 0;
 	if (argv[1] == argv[argc])
 		printf("0\n");
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] < 48 || *argv[i] > 57)
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[i][j] < 48 || argv[i][j] > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 		count += atoi(argv[i]);
 		if (i == argc - 1)
