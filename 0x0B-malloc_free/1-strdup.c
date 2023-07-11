@@ -35,10 +35,11 @@ int _strlen(char *s)
 	int i, count;
 
 	count = 0;
+	i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[i] != '\0')
 	{
 		count += 1;
-	}
+	} do (i++);
 	return (count);
 }
