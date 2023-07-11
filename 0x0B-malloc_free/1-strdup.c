@@ -1,16 +1,16 @@
 #include "main.h"
 /**
  * _strdup - duplicate a string into a new alocatted memory
- * _strlen - return lenght of a string
- * @s: takes input from another function
+ * @str: string to duplicate
  * Return: new pointer, or NULL if fail
- */
+*/
 int _strlen(char *s);
 char *_strdup(char *str)
 {
 	char *ptr;
 	int i, len;
 
+	i = 0;
 	len = _strlen(str);
 	if (str == NULL)
 		return (NULL);
@@ -19,19 +19,20 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	i = 0;
-	while (str[i])
+	else
 	{
-		ptr[i] = str[i];
-		i++;
+		while (str[i])
+		{
+			ptr[i] = str[i];
+			i++;
+		}
+		return (ptr);
 	}
-	return (ptr);
-}
 /**
  * _strlen - return lenght of a string
  * @s: takes input from another function
  * Return: lenght of string s
- */
+*/
 int _strlen(char *s)
 {
 	int i, count;
