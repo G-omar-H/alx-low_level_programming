@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * _strdup - duplicate a string into a new alocatted memory
- * @str: sting to duplicate
+ * _strlen - return lenght of a string
+ * @s: takes input from another function
  * Return: new pointer, or NULL if fail
  */
 int _strlen(char *s);
@@ -9,13 +10,14 @@ char *_strdup(char *str)
 {
 	char *ptr;
 	int i, len;
-	
+
 	len = _strlen(str);
-	if (str == NULL)
+	ptr = malloc(len * sizeof(char));
+	if (ptr == NULL)
 	{
+		printf("mallocfails");
 		return (NULL);
 	}
-	ptr = malloc(len * sizeof(char));
 	i = 0;
 	while (str[i])
 	{
