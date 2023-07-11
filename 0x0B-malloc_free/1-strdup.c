@@ -4,6 +4,7 @@
  * @str: sting to duplicate
  * Return: new pointer, or NULL if fail
  */
+int _strlen(char *s);
 char *_strdup(char *str)
 {
 	char *ptr;
@@ -34,7 +35,7 @@ int _strlen(char *s)
 
 	count = 0;
 
-	for (i = 1; s[i] <= '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		count += 1;
 	}
