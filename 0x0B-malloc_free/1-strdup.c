@@ -40,6 +40,6 @@ int _strlen(char *s)
 	do {
 		count += 1;
 		i++;
-	} while (s[i] <= '\0');
+	} while (s[i] <= '0');
 	return (count);
 }
