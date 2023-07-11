@@ -37,7 +37,7 @@ int _strlen(char *s)
 	int i, count;
 
 	count = 0;
-	i = 1;
+	i = 0;
 
 	do {
 		count += 1;
