@@ -13,6 +13,12 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 	ar = malloc(size * sizeof(char));
+	if (ar == NULL)
+	{
+		printf("malloc fails");
+		return (NULL);
+	}
+
 	i = 0;
 	while (i < size)
 	{
