@@ -7,11 +7,11 @@
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *arr;
+	void *arr;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	arr = calloc(nmemb, sizeof(*arr));
+	arr = calloc(nmemb,  sizeof(int));
 	if (arr == 0)
 	       return (NULL);
 	return (arr);	
