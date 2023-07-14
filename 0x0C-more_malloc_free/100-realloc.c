@@ -18,6 +18,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(tpr);
 		return (NULL);
 	}
+	if (ptr == NULL && tpr != NULL)
+	{
+		return (tpr);
+	}
 	if (new_size > old_size)
 	{
 		for (n = 0; n < old_size; n++)
@@ -30,10 +34,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		free(tpr);
 		return (ptr);
-	}
-	if (ptr == NULL && tpr != NULL)
-	{
-		return (tpr);
 	}
 	if (new_size == 0 && ptr != NULL)
 	{
