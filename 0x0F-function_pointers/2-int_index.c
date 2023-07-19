@@ -5,7 +5,7 @@
  * @size: number of array's elements
  * @cmp: func pointer to check if integer
  * Return: first element's index matches; -1 of fails
-*/
+ */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
@@ -20,6 +20,8 @@ int int_index(int *array, int size, int (*cmp)(int))
 			if (cmp(array[i]) == 1)
 				return (i);
 		}
+		if (cmp(array[i]) == 0)
+			return (-1);
 	}
-	return (-1);
+	return (0);
 }
