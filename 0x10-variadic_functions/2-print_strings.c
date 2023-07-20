@@ -11,17 +11,18 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i = 0;
 
 	va_start(ap, n);
-	while  (i < n)
+	for (i = 0; i < n; i++)
 	{
-		if (ap != NULL)
-			printf("%s", va_arg(ap, char *));
-		else if (ap == '\0')
+		char *str = va_arg(ap, char *);
+
+		if (str == NULL)
 			printf("(nil)");
+		else
+			printf("%s", str);
 		if (separator && i < n - 1)
 		{
 			printf("%s", separator);
 		}
-		i++;
 	}
 	printf("\n");
 	va_end(ap);
