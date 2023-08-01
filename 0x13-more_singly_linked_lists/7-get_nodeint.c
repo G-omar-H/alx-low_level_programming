@@ -8,18 +8,16 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	listint_t *current = head;
-	unsigned int nodes = 1;
+	listint_t *count = head;
+	unsigned int nodes = 0;
 
-	while (current != NULL)
+	while (count != NULL)
 	{
+		count = count->next;
 		nodes++;
-		current = current->next;
 	}
 	if (nodes < index)
-	{
-		printf("Error");
 		return (NULL);
-	}
 	while (index > 0 && current != NULL)
 	{
 		index--;
