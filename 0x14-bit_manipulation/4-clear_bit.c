@@ -11,6 +11,8 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	while (index)
 	{
+		if (clear > ULONG_MAX)
+			return (-1);
 		clear <<= 1;
 		index--;
 	}
