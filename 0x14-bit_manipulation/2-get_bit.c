@@ -9,7 +9,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int count = index;
 
-	while (count > 0 && n > 0)
+	while (count > 0 && n)
 	{
 		n >>= 1;
 		count--;
