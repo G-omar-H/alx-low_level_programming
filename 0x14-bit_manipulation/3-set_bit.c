@@ -11,6 +11,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	while (index > 0)
 	{
+		if (set > UINT_MAX)
+			return (-1);
 		set <<= 1;
 		index--;
 	}

@@ -10,14 +10,14 @@ int main(void)
 {
 	unsigned long int n;
 
-	n = 2048;
-	set_bit(&n, 2000);
+	n = 1024;
+	clear_bit(&n, 10);
 	printf("%lu\n", n);
 	n = 0;
-	set_bit(&n, 10);
+	clear_bit(&n, 10);
 	printf("%lu\n", n);
 	n = 98;
-	set_bit(&n, 0);
+	clear_bit(&n, 1);
 	printf("%lu\n", n);
 	return (0);
 }
