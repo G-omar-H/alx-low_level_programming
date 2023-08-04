@@ -7,17 +7,9 @@
 */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned  long int clear = 1;
-
-	while (index)
-	{
-		if (clear > ULONG_MAX)
-			return (-1);
-		clear <<= 1;
-		index--;
-	}
-	if (index != 0)
+	if (index >= sizeof(n) * 8)
 		return (-1);
-	*n &= ~clear;
+	if (*n & 1UL << index)
+		*n ^= 1UL << index;
 	return (1);
 }
