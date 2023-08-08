@@ -24,19 +24,17 @@ int main(int ac, char **av)
 	ssize_t rd;
 	char *buff;
 
-	buff = malloc(sizeof(char) * 1024);
-	if (buff ==  NULL)
-	{
-		free(buff);
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
 	if (ac != 3)
 	{
-		free(buff);
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	buff = malloc(sizeof(char) * 1024);
+        if (buff ==  NULL)
+        {
+                dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+                exit(99);
+        }
 	fd1 = open(av[1], O_RDONLY);
 	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR
 			| S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
