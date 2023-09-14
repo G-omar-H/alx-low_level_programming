@@ -9,6 +9,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *current = (*head), *previous = (*head);
 
+	if (!head)
+		return (-1)
 	if (*head && !index)
 	{
 		if (!current->next)
