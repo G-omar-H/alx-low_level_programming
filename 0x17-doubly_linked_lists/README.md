@@ -1,3 +1,7 @@
-0x017 doubly lincked list project
-Data structure
-C
+...
+
+0x17 doubly lincked_list project
+C programme language
+ALX
+
+...
