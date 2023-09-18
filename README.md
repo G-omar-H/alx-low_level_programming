@@ -1,1 +1,3 @@
-0x00 C Hello, World
+0x18 shared (dynamic) library
+C programming language
+ALX project
