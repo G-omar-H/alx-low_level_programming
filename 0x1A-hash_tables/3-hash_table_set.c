@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-#include <string.h>
+int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 /**
  * hash_table_set - insert a new item into the hash table
  * @ht: the table to compute
@@ -10,11 +10,13 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *item = (hash_node_t *)malloc(sizeof(hash_node_t));
-	unsigned long int index = key_index((const unsigned char *)key, ht->size);
-	hash_node_t *current = ht->array[index];
+	unsigned long int index;
+	hash_node_t *current;
 
 	if (ht == NULL)
 		return (1);
+	index = key_index((const unsigned char *)key, ht->size);
+	current = ht->array[index];
 	if (value == NULL || key == NULL)
 	{
 		if (key == NULL)
