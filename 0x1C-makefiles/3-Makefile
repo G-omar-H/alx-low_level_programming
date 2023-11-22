@@ -10,6 +10,6 @@ clean :
 oclean :
 	rm  -f $(OBJ)
 fclean :
-	rm -f clean oclean
+	clean oclean
 re : fclean all
 
