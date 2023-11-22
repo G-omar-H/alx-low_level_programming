@@ -1,0 +1,7 @@
+all = school
+name = school
+CC = gcc
+SRC = %.c
+OBJ = %.o
+all : main.o school.o
+	$(CC)	$^ -o $(name)
