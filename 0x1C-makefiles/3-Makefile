@@ -6,7 +6,7 @@ all : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 .PHONY: clean oclean fclean re 
 clean :
-	rm -f $(NAME)
+	rm -f  *~ $(NAME)
 oclean :
 	rm  -f $(OBJ)
 fclean :
