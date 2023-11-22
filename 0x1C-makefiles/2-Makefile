@@ -4,4 +4,4 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
 all : $(OBJ)
-	$(CC)  $^ -o $(name)
+	$(CC)  $(OBJ) -o $(name)
