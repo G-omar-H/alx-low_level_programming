@@ -8,42 +8,30 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-    size_t i, j, l = size - 1, m = l / 2;
-    size_t  t = m;
-    if (array && array[0] <= array[l])
-    {
-        printf("Searching in array: " );
-        for (i = 0; i < size - 1 && array[i] >= 0; i++)
-        {
-            printf("%d, ", array[i]);
-            if (i == size - 2)
-            {
-                printf("%d\n", array[i + 1]);
-                break;
-            }
-        }
-        if (value == array[m])
-        {
-            printf("Found %d at index: %ld", array[m], t);
-            return (t);
-        }
-        else if (value < array[m])
-            t = t + binary_search(array, m, value);
-        else
-        {
-            j = m + 1;
-            for (i = 0; i < size; i++)
-            {
-                if (array[j])
-                {
-                    array[i] = array[j];
-                    j++;
-                }
-                else
-                    array[i] = -1;
-            }
-            t = t - binary_search(array, m + 1, value);
-        }
-    }
-    return (-1);
+	size_t i = 0, l = size - 1, f = 0, m = f + l / 2;
+
+	if (array)
+	{
+		while (f <= l)
+		{
+			printf("Searching in array: ");
+			for (i = f; i <= l; i++)
+			{
+				if (i == l)
+				{
+					printf("%d\n", array[i]);
+					break;
+				}
+				printf("%d, ", array[i]);
+			}
+			m = (f + l) / 2;
+			if (array[m] == value)
+				return (m);
+			else if (array[m] < value)
+				f = m + 1;
+			else
+				l = m;
+		}
+	}
+	return (-1);
 }
