@@ -30,7 +30,7 @@ int interpolation_search(int *array, size_t size, int value)
 				break;
 			}
 			else
-				printf(" = %d\n", array[pos]);
+				printf(" = [%d]\n", array[pos]);
 
 			if (array[pos] == value)
 				return (pos);
