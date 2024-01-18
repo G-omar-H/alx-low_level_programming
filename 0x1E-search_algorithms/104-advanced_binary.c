@@ -1,50 +1,56 @@
 #include "search_algos.h"
+
 /**
- * rec_search - looks for the first occurence of an  element
- * on a sorted array recursively
- * @array: pointer to the first element of a list
+ * rec_search - searches for a value in an array of
+ * integers using the Binary search algorithm
+ *
+ *
+ * @array: input array
  * @size: size of the array
- * @value: value to search for
- * Return: index of the element where value, -1 if unseccessful
+ * @value: value to search in
+ * Return: index of the number
  */
 int rec_search(int *array, size_t size, int value)
 {
-	size_t  m, i;
+	size_t half = size / 2;
+	size_t i;
 
+	if (array == NULL || size == 0)
+		return (-1);
 
-	m = size / 2;
+	printf("Searching in array");
 
-	if (array && size > 0)
+	for (i = 0; i < size; i++)
+		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
+
+	printf("\n");
+
+	if (half && size % 2 == 0)
+		half--;
+
+	if (value == array[half])
 	{
-		printf("Searching in array: ");
-		for (i = 0; i < size; i++)
-			printf("%s %d", (i == 0) ? ":" : ",", array[i]);
-		printf("\n");
-		if (m && size % 2 == 0)
-			m--;
-		if (array[m] == value)
-		{
-			if (m > 0)
-				return (advanced_binary(array, m + 1, value));
-			return ((int)m);
-		}
-
-		if (array[m] > value)
-			return (advanced_binary(array, m + 1, value));
-		m++;
-		return (advanced_binary(array + m, size - m, value) + m);
+		if (half > 0)
+			return (rec_search(array, half + 1, value));
+		return ((int)half);
 	}
-	return (-1);
-}
-/**
- * advanced_binary - calls rec_search to retur the idex of an element
- * on a sorted array recursively
- * @array: pointer to the first element of a list
- * @size: size of the array
- * @value: value to search for
- * Return: index of the element where value, -1 if unseccessful
- */
 
+	if (value < array[half])
+		return (rec_search(array, half + 1, value));
+
+	half++;
+	return (rec_search(array + half, size - half, value) + half);
+}
+
+/**
+ * advanced_binary - calls to rec_search to return
+ * the index of the number
+ *
+ * @array: input array
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
+ */
 int advanced_binary(int *array, size_t size, int value)
 {
 	int index;
