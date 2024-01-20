@@ -12,7 +12,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	size_t save, i;
 
 	node = sub = prev = list;
-	if (!list)
+	if (list == NULL)
 		return (NULL);
 
 	while (node)
