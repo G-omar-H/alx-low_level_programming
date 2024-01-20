@@ -23,7 +23,7 @@ int main(void)
 	print_skiplist(list);
 
 	res =  linear_skip(list, 53);
-	printf("Found %d at index: %lu\n\n", 53, res->index);
+	printf("Found %d at index: %lu\n\n", 0, res->index);
 	res =  linear_skip(list, 2);
 	printf("Found %d at index: %lu\n\n", 2, res->index);
 	res =  linear_skip(list, 999);
